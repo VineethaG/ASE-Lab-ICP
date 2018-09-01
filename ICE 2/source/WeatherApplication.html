@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.1/angular.min.js" type="application/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<style>
+    .weatherDisplayModule{
+        background: lightgray;
+        height: 220px;
+        width: auto;
+        border: 1px dashed #ccc;
+        padding: 1em;
+          }
+    .background {
+        background-color: aliceblue;
+        margin: 90px;
+    }
+    .errorDisplayModule{
+        color: #D8000C;
+    }
+</style>
+
+<script>
+    var app = angular.module('weatherApplication', []);
+    app.controller('weatherController', function($scope,$http) {
+        $scope.getDetails = function(){
+            var statecode = $scope.stateCode;
+            var cityname = $scope.cityName;
+            // hiding the errors every time 'Show Weather' button is clicked
+            $("#stateCodeError").hide();
+            $("#cityNameError").hide();
+            $("#weatherDetailsError").hide();
+            $('.weatherDisplayModule').hide();
+
+            var errorPresent = false;
+
+            // Validating State Code, City Name values.
+            if (statecode == null || $.trim(statecode) == '') {
+                errorPresent = true;
+                // Show Error if State Code is Null/Empty
+                $("#stateCodeError").show();
+            }
+            if (cityname == null || $.trim(cityname) == '' ) {
+                errorPresent = true;
+                // Show Error if City Name is Null/Empty
+                $("#cityError").show();
+            }
+
+            // Return false if error present as it will stop next step.
+            if (errorPresent) {
+                return false;
+            }
+
+            $http.get('http://api.wunderground.com/api/4bbbc25f4f5946dd/hourly/q/'+statecode+'/'+cityname+'.json').success(function(data) {
+                if (data.hourly_forecast == null) {
+                    // Show Error if no details found
+                    $("#weatherError").show();
+                    return false;
+                }
+                $scope.displayWeather=data;
+                $scope.limit = 5;
+            })
+        }
+    });
+</script>
+
+<body class="background" >
+<div ng-app="weatherApplication" ng-controller = "weatherController"  >
+
+    <!-- div for the text and input fields -->
+    <div align="center">
+        <h2 align="center">Weather Application</h2>
+        <h4 style="margin-left: -88px"> Enter State code and City name to get next 5 hours weather condition details.</h4>
+        <a href="https://www.csi.cuny.edu/sites/default/files/pdf/administration/ops/2letterstabbrev.pdf" target="_blank">
+            Click here to get the State Codes</a><br/> <br/>
+        <label >State Code: </label>
+        <input type="text" ng-model="stateCode">
+        <label >City Name: </label>
+        <input type="text" ng-model="cityName" >
+        <button type="submit" ng-click="getDetails()"> Show Weather</button><br/><br/>
+    </div>
+
+    <!-- div to display the errors || Hiding the errors first using Style display:none-->
+    <div class="errorDisplayModule" align="center">
+        <p  id="stateCodeError" style="display: none">State Code cannot be empty!</p>
+        <p  id="cityNameError" style="display: none">City Name cannot be empty!</p>
+        <p  id="weatherDetailsError" style="display: none">Weather details not found!</p>
+    </div>
+
+    <!-- div to display the weather details -->
+    <div class="weatherDisplayModule" ng-show="displayWeather.hourly_forecast.length>0">
+        <b> Weather Details</b>
+        <div ng-repeat="eachHour in displayWeather.hourly_forecast|limitTo:limit">
+            <p>{{eachHour.FCTTIME.pretty +" - "+ eachHour.condition + " & Feelslike "+eachHour.feelslike.english+"&deg;F"}}</p>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
+
