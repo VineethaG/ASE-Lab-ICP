@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html ng-app="nutriApplication">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Rectangle Mobile Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    Rectangle Template
+    http://www.templatemo.com/preview/templatemo_439_rectangle
+    -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <style type='text/css'>
+        .partition1 {
+            width: 20%;
+            float: left;
+            margin-right: 10px;
+        }
+
+        .partition2 {
+            width: 70%;
+            float: right;
+        }
+
+        .partition-wrap {
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        td{
+            margin: 5px;
+        }
+
+    </style>
+</head>
+
+<body ng-controller="calorieController">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div class="site-bg"></div>
+<!--
+<div class="site-bg-overlay"></div>
+-->
+
+<!-- TOP HEADER -->
+<div class="top-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <p class="phone-info">Call us: <a href="#">010 020 0340</a></p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="social-icons">
+                    <ul>
+                        <li><a href="#" class="fa fa-facebook"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" ng-click="logout()" class="fa fa-sign-out"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- .top-header -->
+
+
+<div class="visible-xs visible-sm responsive-menu">
+
+    <div class="show-menu">
+        <ul class="main-menu">
+            <li>`
+                <a class="show-1 active homebutton" href="#"><i class="fa fa-home"></i>Home</a>
+            </li>
+            <li>
+                <a class="show-2 aboutbutton" href="#"><i class="fa fa-search"></i>Search Recipe</a>
+            </li>
+            <li>
+                <a class="show-5 contactbutton" href="#"><i class="fa fa-envelope"></i>Contact</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="container" id="page-content">
+    <div class="row">
+        <div class="col-md-9 col-sm-9 content-holder">
+            <!-- CONTENT -->
+            <div id="menu-container">
+                <div id="menu-1" class="homepage home-section text-center">
+                    <div class="welcome-text">
+                        <h2>Hello, Welcome to <strong>Find the Calories </strong></h2>
+                        <p>Find the Calories and Serving Weights of food searched using<a class="blue" href="https://www.nutritionix.com/"> Nutritionix API
+                        </a>. This application gives the Calories and Serving weight of the item searched.</p>
+                        <br/>
+                        <form action="#" method="get" class="subscribe-form">
+                            <div class="row">
+                                <fieldset class="col-md-offset-2 col-md-6">
+                                    <input name="subscribe-email" type="email" class="email" id="subscribe-email"
+                                           placeholder="Write your email here..">
+                                </fieldset>
+                                <fieldset class="col-md-4 button-holder">
+                                    <input name="submit" type="submit" class="button default" id="submit"
+                                           value="Submit">
+                                </fieldset>
+                            </div>
+                            <p class="subscribe-text">Please subscribe your email for latest updates!</p>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="menu-2" class="content about-section">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-8" style="width: 100%;">
+                            <div class="box-content profile">
+                                <h3 class="widget-title">Search Item</h3>
+                                <form class="contact-form">
+                                    <fieldset>
+                                        <input type="text" style="width: 65%;" class="name"
+                                               ng-model="phrase" placeholder="Enter food item to get its Calories...">
+                                        <input type="button" class="button" style="padding:9px 18px;"
+                                               ng-click="getDetails()" value="Find">
+                                        <div ng-controller="speechController">
+                                        <a id="text2speech" class="speech" type="button" ng-click="speech()" target="_blank">🔊 Text to Speech</a>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div >
+                            <div class="box-content">
+                                <h3 class="widget-title" style="font-weight: 600; ">Calories & Serving Weight Details</h3>
+                                <div ng-show="displayDetails.hits.length>0">
+                                    <div class="row">
+                                        <p class="col-sm-3">Brand</p>
+                                        <p class="col-sm-2">Item Name</p>
+                                        <p class="col-sm-2">Calories</p>
+                                        <p class="col-sm-3">Serving Size Quantity</p>
+                                        <p class="col-sm-2">Serving Size Unit</p>
+                                    <div ng-repeat="each in displayDetails.hits">
+                                        <p class="col-sm-3">{{each.fields.brand_name}}</p>
+                                        <p class="col-sm-2">{{each.fields.item_name}}</p>
+                                        <p class="col-sm-2">{{each.fields.nf_calories}}</p>
+                                        <p class="col-sm-3">{{each.fields.nf_serving_size_qty}}</p>
+                                        <p class="col-sm-2">{{each.fields.nf_serving_size_unit}}</p>
+                                    </div>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="menu-4" class="content contact-section">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-8" style="width: 100%">
+                            <div class="box-content">
+                                <h3 class="widget-title">Send Us A Message</h3>
+                                <form class="contact-form">
+                                    <fieldset>
+                                        <input type="text" class="name" id="name" placeholder="Name...">
+                                    </fieldset>
+                                    <fieldset>
+                                        <input type="email" class="email" id="email" placeholder="Email...">
+                                    </fieldset>
+                                    <fieldset>
+                                        <input type="text" class="subject" id="subject" placeholder="Subject...">
+                                    </fieldset>
+                                    <fieldset>
+                                        <textarea name="message" id="message" cols="30" rows="4"
+                                                  placeholder="Message.."></textarea>
+                                    </fieldset>
+                                    <fieldset>
+                                        <input type="submit" class="button" id="button" value="Send Message">
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="col-md-3 hidden-sm">
+
+            <nav id="nav" class="main-navigation hidden-xs hidden-sm">
+                <ul class="main-menu">
+                    <li>
+                        <a class="show-1 active homebutton" href="#"><i class="fa fa-home"></i>Home</a>
+                    </li>
+                    <li>
+                        <a class="show-2 aboutbutton" href="#"><i class="fa fa-search"></i>Get Calorie Details</a>
+                    </li>
+                    <li>
+                        <a class="show-5 contactbutton" href="#"><i class="fa fa-envelope"></i>Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</div>
+
+<!-- SITE-FOOTER -->
+<div class="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+            </div>
+        </div>
+    </div>
+</div> <!-- .site-footer -->
+
+<script src="js/vendor/jquery-1.10.2.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular.js"></script>
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-resource.js"></script>
+<script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-sanitize.js"></script>
+<script src="js/home.js"></script>
+<script type="text/javascript" src="js/services.js"></script>
+<script src="js/googleOauth.js"></script>
+<script src="js/angularOauth.js"></script>
+
+<!-- templatemo 439 rectangle -->
+</body>
+</html>
