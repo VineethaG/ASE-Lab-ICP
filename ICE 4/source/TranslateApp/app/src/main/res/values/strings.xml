@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Translate App</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_translate">TranslateActivity</string>
+    <string-array name="destination">
+        <item>Hindi</item>
+        <item>Telugu</item>
+        <item>Latin</item>
+        <item>Italian</item>
+        <item>Chinese</item>
+        <item>Russian</item>
+        <item>Spanish</item>
+    </string-array>
+
+    <string-array name="inputLanguage">
+        <item>English</item>
+        <item>Hindi</item>
+        <item>Telugu</item>
+        <item>Latin</item>
+        <item>Italian</item>
+        <item>Chinese</item>
+        <item>Russian</item>
+        <item>Spanish</item>
+    </string-array>
+</resources>

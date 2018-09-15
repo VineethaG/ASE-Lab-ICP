@@ -1,0 +1,78 @@
+-- Merging decision tree log ---
+manifest
+ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:2:1-26:12
+	package
+		ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:3:5-47
+		INJECTED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml
+		INJECTED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml
+		INJECTED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml
+		INJECTED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:4:5-66
+	android:name
+		ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:4:22-64
+application
+ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:5:5-24:19
+MERGED from [com.android.support:design:23.2.1] C:\Users\vinee\.android\build-cache\a67086bb74aab07011de6a912e9827817a8815b9\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.2.1] C:\Users\vinee\.android\build-cache\b23ec549dd9bcd6a691ed66b738199f4801afcb0\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.2.1] C:\Users\vinee\.android\build-cache\87cd7218f11592fec91e45fadefc849b8cd04804\output\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.2.1] C:\Users\vinee\.android\build-cache\8acb9ece4a8b60fa39364f43d075e1234f7dafea\output\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.2.1] C:\Users\vinee\.android\build-cache\66d6de07e478a942343f1ae924d04a0d338bdc3f\output\AndroidManifest.xml:22:5-20
+	android:label
+		ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:8:9-41
+	android:supportsRtl
+		ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:9:9-35
+	android:allowBackup
+		ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:6:9-35
+	android:icon
+		ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:7:9-43
+	android:theme
+		ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:10:9-40
+activity#tutorial.cs5551.com.translateapp.LoginActivity
+ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:11:9-19:20
+	android:label
+		ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:13:13-45
+	android:theme
+		ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:14:13-56
+	android:name
+		ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:12:13-42
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:15:13-18:29
+action#android.intent.action.MAIN
+ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:16:17-69
+	android:name
+		ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:16:25-66
+category#android.intent.category.LAUNCHER
+ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:17:17-77
+	android:name
+		ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:17:27-74
+activity#tutorial.cs5551.com.translateapp.TranslateActivity
+ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:20:9-23:68
+	android:label
+		ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:22:13-61
+	android:theme
+		ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:23:13-56
+	android:name
+		ADDED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml:21:13-46
+uses-sdk
+INJECTED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:design:23.2.1] C:\Users\vinee\.android\build-cache\a67086bb74aab07011de6a912e9827817a8815b9\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.2.1] C:\Users\vinee\.android\build-cache\b23ec549dd9bcd6a691ed66b738199f4801afcb0\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:23.2.1] C:\Users\vinee\.android\build-cache\87cd7218f11592fec91e45fadefc849b8cd04804\output\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:support-vector-drawable:23.2.1] C:\Users\vinee\.android\build-cache\8acb9ece4a8b60fa39364f43d075e1234f7dafea\output\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:recyclerview-v7:23.2.1] C:\Users\vinee\.android\build-cache\48bde494bc50e360d998f20f34ad48028a93d9a8\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.2.1] C:\Users\vinee\.android\build-cache\66d6de07e478a942343f1ae924d04a0d338bdc3f\output\AndroidManifest.xml:20:5-43
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:23.2.1] C:\Users\vinee\.android\build-cache\b23ec549dd9bcd6a691ed66b738199f4801afcb0\output\AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml
+		INJECTED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml
+		INJECTED from F:\ASE\ICP 4\TranslateApp\TranslateApp\TranslateApp\app\src\main\AndroidManifest.xml

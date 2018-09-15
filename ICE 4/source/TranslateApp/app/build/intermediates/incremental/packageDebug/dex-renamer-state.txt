@@ -1,0 +1,7 @@
+#Fri Sep 14 18:30:08 CDT 2018
+base.0=F\:\\ASE\\ICP 4\\TranslateApp\\TranslateApp\\TranslateApp\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_f52c6c1651f0de053754b6d5d0f05fdb54d42c98
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=F\:\\ASE\\ICP 4\\TranslateApp\\TranslateApp\\TranslateApp\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_c2cefd60ece1f3091b4742d6f0dc082ce6f62ae0\\classes.dex
+base.1=F\:\\ASE\\ICP 4\\TranslateApp\\TranslateApp\\TranslateApp\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_c2cefd60ece1f3091b4742d6f0dc082ce6f62ae0
+file.0=F\:\\ASE\\ICP 4\\TranslateApp\\TranslateApp\\TranslateApp\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_f52c6c1651f0de053754b6d5d0f05fdb54d42c98\\classes.dex
