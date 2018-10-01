@@ -1,0 +1,7 @@
+Ionic:
+>> ionic start MyIonicProject blank
+>> ionic g page register
+>> ionic g page home tabs
+>> ionic cordova platform add android
+>> ionic cordova build android
+>> ionic serve
