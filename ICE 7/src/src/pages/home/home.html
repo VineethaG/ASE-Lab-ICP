@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <h3 class="titleicon" style="display:inline-block">Medicine Take Back</h3>
+    <button style="float: right; top: 5px; right: 20px;" ion-button color="tertiary" (click)="logout()">Logout</button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    
+    
+    <button  ion-button color="tertiary" (click)="Capture()">Take Picture</button>
+<ion-list>
+  <ion-item *ngFor="let Image of Images | async">
+    <ion-card>
+      <img src={{Image.data}}/>
+    </ion-card>
+  </ion-item>
+</ion-list>
+</ion-content>
