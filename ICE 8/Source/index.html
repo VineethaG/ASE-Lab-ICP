@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+
+        .menu input{
+      width: 300px;
+      background: transparent;
+      border: 2px solid #9e9e9e;
+      border-radius: 4px;
+      color: #5e5e5e;
+      font-family: 'Exo', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 6px;
+      margin-top: 10px;
+    }
+    .menu button{
+        width: 419px;
+        height:40px;
+        background:#3dc1e0;
+        border:  2px solid #ffffff;
+        cursor: pointer;
+        border-radius: 4px;
+        color: #ffffff;
+        font-family: 'Exo', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 6px;
+        margin-top: 10px;
+    }
+        table {
+            max-width: 960px;
+            margin: 10px auto;
+            border: 1px solid #FFF;
+        }
+
+        caption {
+            font-size: 1.6em;
+            font-weight: 400;
+            padding: 10px 0;
+        }
+
+        thead th {
+            font-weight: 400;
+            background: #8a97a0;
+            color: #FFF;
+        }
+
+        tr {
+            background: #f4f7f8;
+            border: 1px solid #FFF;
+            margin-bottom: 5px;
+        }
+
+        tr:nth-child(even) {
+            background: #e8eeef;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 20px;
+            font-weight: 300;
+        }
+
+        tfoot tr {
+            background: none;
+        }
+
+        tfoot td {
+            padding: 10px 2px;
+            font-size: 0.8em;
+            font-style: italic;
+            color: #8a97a0;
+        }
+  </style>
+
+</head>
+<body class="body">
+
+
+  <div  ng-controller="View1Ctrl" style="top: 200px">
+    <div class="menu" id="div_SearchContainer">
+    <h1 align="absolute" style="text-align: center; color:	#228B22;font-family: 'Exo', sans-serif;font-size: 30px;font-weight: 600;">Issue Details and Treatment</h1>
+
+
+            <select ng-model="issueid" style="width: 100px;margin-left: 400px;height: 35px;border-radius: 7px;padding-left: 25px;background:
+            #228B22;color: #ffffff;font-family: 'Exo', sans-serif;font-size: 16px;font-weight: 600;">
+                <option ng-repeat="x in issues" value="{{x.ID}}">{{x.Name}}</option>
+            </select>
+
+
+        <button style="background:#228B22;color: #ffffff;font-family: 'Exo', sans-serif;font-size: 16px;font-weight: 600;"id="btn_getReview" ng-click="getVenues()">Get Issue Details and Treatment</button>
+
+    </div>
+    <div id="div_VenueList" style="display: none">
+
+        <br>
+        <div align="center" class="well well-sm" style="width: 522px;margin-left: 400px;background: #228B22;color: #ffffff;font-family: 'Exo', sans-serif;font-size: 16px;font-weight: 600;border-radius: 5px;">{{desc}}</div>
+        <div align="center" class="well well-sm" style="width: 522px;margin-left: 400px;background:	#228B22;color: #ffffff;font-family: 'Exo', sans-serif;font-size: 16px;font-weight: 600;border-radius: 5px;">Treatment Description:<br>{{treatmentdesc}}</div>
+      <ul>
+      </ul>
+
+    </div>
+  </div>
+
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+  <script src="app.js"></script>
+
+
+
+</body>
+</html>
