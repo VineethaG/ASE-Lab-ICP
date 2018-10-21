@@ -63,7 +63,7 @@ app.get('/getDetails/*',(req,res)=>{
     let query = req.query;
     console.log(query);
 
-    students_schema.find({student_ID: query.studentId}, function (err, data) {
+    students_schema.find({major: query.major}, function (err, data) {
         if (!err) {
             res.send(data);
             console.log(data)

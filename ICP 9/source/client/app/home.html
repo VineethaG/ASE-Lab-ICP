@@ -12,6 +12,7 @@
     <script type="text/javascript" src="http://code.angularjs.org/1.1.1/angular-sanitize.js"></script>
     <link href="app.css" rel="stylesheet">
     <script src="home.js"></script>
+
 </head>
 <body ng-controller="mController">
 
@@ -19,14 +20,18 @@
     <br/>
     <div class="row justify-content-center">
         <div class="col-12 col-md-10 col-lg-8">
+            <div>
+                <a href="index.html">Click here to Enter Details</a>
+            </div> <br>
             <form class="card card-sm">
                 <div class="card-body row no-gutters align-items-center">
                     <div class="col-auto">
                         <i class="fas fa-search h4 text-body"></i>
                     </div>
+
                     <!--end of col-->
                     <div class="col">
-                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Enter Your Student ID" ng-model="StudentID">
+                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Enter Your Major" ng-model="majorID">
                     </div>
                     <!--end of col-->
                     <div class="col-auto">
@@ -36,9 +41,10 @@
                 </div>
             </form> <br>
             <div id = "detailsDisplay" style="display: none">
-                <span class="d-block p-3 bg-dark text-white" align="center">Hi {{name}}, Welcome to Our Page !</span><br>
-
-                <div style="color: whitesmoke" align="center">Click here to redirect to UMKC {{major}} course catalog </div>
+                <p align="center"> Found {{results}} results</p> <br>
+                <ul><li class="d-block p-3 bg-dark text-white"  ng-repeat="x in names" >{{x.student_Name}}, Welcome to Our Page!</li><br>
+                </ul>
+                <!--<div style="color: whitesmoke" align="center">Click here to redirect to UMKC {{majors}} course catalog </div>-->
             </div>
         </div>
         <!--end of col-->

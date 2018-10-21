@@ -6,20 +6,20 @@ angular.module('mdb', [])
 
 
         $scope.getData = function () {
-            var studentID = $scope.StudentID;
+            var major = $scope.majorID;
             document.getElementById('detailsDisplay').style.display = 'block';
-
-            console.log(studentID);
-            // document.getElementById('div_VenueList').style.display = 'block';
-            if (studentID != "") {
+            if (major != "") {
                 $http({
-                    url: "http://localhost:3000/getDetails/?studentId=" + studentID ,
+                    url: "http://localhost:3000/getDetails/?major=" + major ,
                     method: 'GET'
                 }).then(function (data, status) {
                     console.log(data.data[0])
-                    $scope.name = data.data[0].student_Name;
-                    $scope.major = data.data[0].major;
+                    console.log(data.data.length)
+                    $scope.results = data.data.length
+                    $scope.names = data.data;
+                    $scope.majors = data.data;
                 });
             }
         }
+
     })
