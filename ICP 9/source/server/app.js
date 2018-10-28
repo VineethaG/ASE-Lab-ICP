@@ -15,7 +15,7 @@ const student_details = new Schema({
     minor: String
 });
 const students_schema = mongoose.model('student_details', student_details);
-let db_promise = mongoose.connect('mongodb://Vineetha:vineetha9@ds137283.mlab.com:37283/in_class_program_9');
+let db_promise = mongoose.connect('mongodb://<username>:<password>@ds137283.mlab.com:37283/in_class_program_9');
 db_promise.then((data)=>{
   console.log('DB connection established !');
 }).catch((err)=>{
